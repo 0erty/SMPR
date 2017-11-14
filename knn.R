@@ -33,13 +33,13 @@ plot(iris[, 3:4],
      bg = colors[iris$Species],
      col = colors[iris$Species])
 
-points(ax, ay, pch = 20, col = "black")
+points(ax, ay, pch = 20, col = "yellow")
 
-points(bx, by, pch = 20, col = "black")
+points(bx, by, pch = 20, col = "yellow")
 
-points(cx, cy, pch = 20, col = "black")
+points(cx, cy, pch = 20, col = "yellow")
 
-points(p, pch = 20, col = "yellow", lwd = 9)
+points(p, pch = 20, col = "grey", lwd = 9)
 
 dist <- function(u, v)
   
