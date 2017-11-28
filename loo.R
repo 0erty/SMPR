@@ -56,6 +56,7 @@ points(z[1], z[2], pch = 22, bg = colors[class], col = colors[class], asp = 1, l
   arr <- c(seq(1,50)) 
   while (k <= 50){ 
     while (i <= 150){ 
+# Убираем i-й объект с обучающей выборки
       if (iris[i,5] != kNN(iris[-i, 3:5], c(iris[i,3], iris[i,4]), k)){ 
         tmp = tmp + 1 
       } 
