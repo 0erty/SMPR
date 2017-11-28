@@ -11,7 +11,7 @@ avg <- function(x) #заводим новую функцию
 }
 
 
-colors <- #устанваливаем цвета
+colors <- #устанавливаем цвета
   c("setosa" = "red",
     "versicolor" = "green",
     "virginica" = "blue")
