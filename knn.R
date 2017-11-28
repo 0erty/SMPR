@@ -1,21 +1,21 @@
-v <- iris[, 3:4]
+v <- iris[, 3:4] #берем значения из 2 столбцов матрицы 
 
-p <- c(3, 1)
+p <- c(3, 1) #создаем вектор с 3 строками и 1 столбцом
 
 
-avg <- function(x)
+avg <- function(x) #заводим новую функцию
   
 {
-  sum(x) / length(x)
+  sum(x) / length(x) #находим 
   
 }
 
 
-colors <-
+colors <- #устанваливаем цвета
   c("setosa" = "red",
     "versicolor" = "green",
     "virginica" = "blue")
-ax <- avg(iris[iris$Species == "setosa", 3])
+ax <- avg(iris[iris$Species == "setosa", 3]) #задаем точки
 
 ay <- avg(iris[iris$Species == "setosa", 4])
 
@@ -28,7 +28,7 @@ cx <- avg(iris[iris$Species == "virginica", 3])
 cy <- avg(iris[iris$Species == "virginica", 4])
 
 
-plot(iris[, 3:4],
+plot(iris[, 3:4], # Рисуем выборку
      pch = 21,
      bg = colors[iris$Species],
      col = colors[iris$Species])
@@ -41,7 +41,7 @@ points(cx, cy, pch = 20, col = "yellow")
 
 points(p, pch = 20, col = "grey", lwd = 9)
 
-dist <- function(u, v)
+dist <- function(u, v) # Евклидово расстояние
   
 {
   sqrt(sum((u - v) ^ 2))
