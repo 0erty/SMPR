@@ -1,7 +1,9 @@
+## Евклидово расстояние
 euclideanDistance <- function(u, v) {
   sqrt(sum((u - v) ^ 2))
 }
 
+## Сортируем объекты согласно расстояния до объекта z
 sortObjectsByDist <- function(xl, z, metricFunction = euclideanDistance)
 {
   l <- dim(xl)[1] 
@@ -17,15 +19,21 @@ sortObjectsByDist <- function(xl, z, metricFunction = euclideanDistance)
   
 }
 
+## Применяем метод kNN
 kNN <- function(xl, z, k) {
+  ## Сортируем выборку согласно классифицируемого объекта
   orderedXl <- sortObjectsByDist(xl, z, euclideanDistance) 
   n <- dim(orderedXl)[2] - 1 
+  ## Получаем классы первых k соседей
   classes <-orderedXl[1:k, n + 1] 
+  ## Составляем таблицу встречаемости каждого класса
   counts <- table(classes)
+  ## Находим класс, который доминирует среди первых k соседей
   class <- names(which.max(counts)) 
   return (class)
 }
 
+## Рисуем выборку
 plot(
   iris[, 3:4],
   pch = 21,
@@ -34,6 +42,7 @@ plot(
   asp = 1
 )
 
+## Классификация одного заданного объекта
 z <-c(2.7, 1) 
 xl <-iris[, 3:5] 
 class <-kNN(xl, z, k = 6) 
