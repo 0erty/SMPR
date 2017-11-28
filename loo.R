@@ -53,7 +53,7 @@ points(z[1], z[2], pch = 22, bg = colors[class], col = colors[class], asp = 1, l
   tmp <- 0 
   sectmp <- 1
   k <-1 
-  arr <- c(seq(1,50)) 
+  arr <- c(seq(1,50)) # указываем интервал между числами
   while (k <= 50){ 
     while (i <= 150){ 
 # Убираем i-й объект с обучающей выборки
