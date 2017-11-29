@@ -53,8 +53,8 @@ points(z[1], z[2], pch = 22, bg = colors[class], col = colors[class], asp = 1, l
   tmp <- 0 
   sectmp <- 1
   k <-1 
-  arr <- c(seq(1,50)) # указываем интервал между числами
-  while (k <= 50){ 
+  arr <- c(seq(1,150)) # указываем интервал между числами
+  while (k <= 150){ 
     while (i <= 150){ 
 # Убираем i-й объект с обучающей выборки
       if (iris[i,5] != kNN(iris[-i, 3:5], c(iris[i,3], iris[i,4]), k)){ 
@@ -73,5 +73,5 @@ points(z[1], z[2], pch = 22, bg = colors[class], col = colors[class], asp = 1, l
   plot(c(seq(1,5)),arr,type="l",ylab="Error Rate",
        xlab="K",main="Error Rate for Iris", ylim = c(0.4, 0.6))
 
-  arr2 <- (seq(1,50))
+  arr2 <- (seq(1,150))
   plot(arr2, arr, type = "l")
