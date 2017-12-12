@@ -16,6 +16,42 @@ KNN - алгоритм в котором задана обучающая выб�
  + Приходится хранить обучающие выборку целиком.
 
  + Трудоемкость поиска ближайших соседей.
+ 
+ Задаем точки в классах
+ 
+ ```R
+ ax <- avg(iris[iris$Species == "setosa", 3])
+
+ay <- avg(iris[iris$Species == "setosa", 4])
+
+bx <- avg(iris[iris$Species == "versicolor", 3])
+
+by <- avg(iris[iris$Species == "versicolor", 4])
+
+cx <- avg(iris[iris$Species == "virginica", 3])
+
+cy <- avg(iris[iris$Species == "virginica", 4])
+ ```
+ 
+ Вычисляем дистанцию и выбираем точку
+ 
+  ```R
+ dist <- function(u, v) # Евклидово расстояние
+  
+{
+  sqrt(sum((u - v) ^ 2))
+  
+}
+
+a <- dist(c(ax, ay), p)
+
+b <- dist(c(bx, by), p)
+
+c <- dist(c(cx, cy), p)
+
+min(c(a, b, c))
+ ```
+ 
 
 ## Вывод:
 ![alt text](https://i.screenshot.net/s/lq2yrtz)
